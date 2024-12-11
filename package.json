@@ -1,11 +1,11 @@
 {
-  "name": "@alpin11/storyblok-deep-relations-resolver",
-  "version": "2.1.3",
+  "name": "@elevantiq/storyblok-deep-relations-resolver",
+  "version": "2.2.0",
   "repository": {
-    "url": "git+https://github.com/alpin11/storyblok-storyblok-deep-relations-resolver.git"
+    "url": "git+https://github.com/elevantiq/storyblok-storyblok-deep-relations-resolver.git"
   },
-  "author": "David Hoeck <d.hoeck@alpin11.com>",
-  "license": "GPLv3",
+  "author": "David Höck <d.hoeck@elevantiq.com>",
+  "license": "MIT",
   "description": "Resolve relations more than 2 levels deep",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -17,8 +17,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import":  "./dist/index.mjs",
-      "require":  "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
@@ -30,16 +30,16 @@
     ]
   },
   "peerDependencies": {
-    "@storyblok/react": "^3.0.0",
+    "@storyblok/react": "^3.0.0 || ^4.0.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@alpin11/eslint-config": "^0.5.0",
+    "@alpin11/eslint-config": "^0.6.2",
     "@tsconfig/recommended": "^1.0.2",
     "@types/node": "^20.14.2",
     "path": "^0.12.7",
     "vite": "^5.2",
-    "vite-plugin-dts": "^3.9.1"
+    "vite-plugin-dts": "^4.3.0"
   }
 }
