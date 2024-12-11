@@ -5,18 +5,18 @@ The Storyblok Deep Relations Resolver is a React library that resolves relations
 To install the package, run the following command:
 
 ```bash
-npm install @alpin11/storyblok-deep-relations-resolver
+npm install @elevantiq/storyblok-deep-relations-resolver
 
 # or with yarn
 
-yarn add @alpin11/storyblok-deep-relations-resolver
+yarn add @elevantiq/storyblok-deep-relations-resolver
 ```
 
 ## Usage
 To use the package, simply import it into your project and use the resolve function to resolve the deep relations in your Storyblok API responses.
 
 ```typescript
-import { resolveRelationsDeep } from '@alpin11/storyblok-deep-relations-resolver'
+import { resolveRelationsDeep } from '@elevantiq/storyblok-deep-relations-resolver'
 
 const storyblokApi = getStoryblokApi()
 
@@ -45,7 +45,7 @@ If you would like to contribute to the project, please follow these steps:
 - Submit a pull request
 
 ## License
-This project is licensed under the GPLv3 License.
+This project is licensed under the [MIT License](./LICENSE.md).
 
 ## Reporting Bugs
 If you find any bugs or issues with the package, please report them by creating a new issue on the GitHub issue tracker.
