@@ -3,7 +3,7 @@
   <picture >
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/elevantiq/.github/raw/main/brand/logo-light.png">
     <source  media="(prefers-color-scheme: light)" srcset="https://github.com/elevantiq/.github/raw/main/brand/logo-dark.png">
-    <img style="height: 40px; width: auto" alt="Elevantiq Logo" src="https://github.com/elevantiq/.github/raw/main/brand/logo-dark.png">
+    <img height="40" width="auto" alt="Elevantiq Logo" src="https://github.com/elevantiq/.github/raw/main/brand/logo-dark.png">
     </picture>
   </a>
 </p>
