@@ -22,7 +22,8 @@
     }
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "publish": "npm publish --access public --scope @elevantiq"
   },
   "release": {
     "branches": [
