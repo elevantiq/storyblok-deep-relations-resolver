@@ -1,6 +1,6 @@
 {
   "name": "@elevantiq/storyblok-deep-relations-resolver",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "repository": {
     "url": "git+https://github.com/elevantiq/storyblok-storyblok-deep-relations-resolver.git"
   },
@@ -22,7 +22,7 @@
     }
   },
   "scripts": {
-    "build": "vite build",
+    "build": "rm -rf dist && vite build",
     "publish": "npm publish --access public --scope @elevantiq"
   },
   "release": {
@@ -31,9 +31,7 @@
     ]
   },
   "peerDependencies": {
-    "@storyblok/react": "^3.0.0 || ^4.0.0",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "@storyblok/react": "^4.0.0"
   },
   "devDependencies": {
     "@alpin11/eslint-config": "^0.6.2",
@@ -41,6 +39,7 @@
     "@types/node": "^20.14.2",
     "path": "^0.12.7",
     "vite": "^5.2",
-    "vite-plugin-dts": "^4.3.0"
+    "vite-plugin-dts": "^4.3.0",
+    "@storyblok/react": "^4.4.0"
   }
 }

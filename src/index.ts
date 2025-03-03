@@ -1,20 +1,19 @@
-import type { ISbStoriesParams, StoryblokClient } from '@storyblok/react/rsc'
-import type { ISbCustomFetch } from 'storyblok-js-client'
+import type {ISbStoriesParams, StoryblokClient} from '@storyblok/react/rsc'
+import type {ISbCustomFetch, ISbStoryData} from 'storyblok-js-client'
 
-interface StoryComponent {
-  [key: string]: string | any | StoryComponent
-}
+type StoryDataType = ISbStoryData
+type StoryContentType = ISbStoryData['content']
 
 export const resolveRelationsDeep = async (
   apiClient: StoryblokClient,
-  data: StoryComponent,
+  data: StoryDataType,
   uuidArrays: string[],
   params?: ISbStoriesParams,
   fetchOptions?: ISbCustomFetch,
-  loadDataForUUIDCallback?: (uuid: string, params?: ISbStoriesParams) => StoryComponent) => {
+  loadDataForUUIDCallback?: (uuid: string, params?: ISbStoriesParams) => StoryDataType) => {
   for (const uuidArray of uuidArrays) {
     const [component, field] = uuidArray.split('.')
-    const components: StoryComponent[] = searchStorys(component, data)
+    const components: StoryDataType[] = searchStorys(component, data)
 
     for (const componentData of components) {
       const value = componentData[field]
@@ -27,7 +26,7 @@ export const resolveRelationsDeep = async (
         componentData[field] = await loadDataForUUID(apiClient, value, params, fetchOptions, loadDataForUUIDCallback)
       } else if (typeof value === 'object') {
         // Recursively search for UUIDs in child components
-        await resolveRelationsDeep(apiClient, value as StoryComponent, uuidArrays)
+        await resolveRelationsDeep(apiClient, value as StoryDataType, uuidArrays)
       }
     }
   }
@@ -35,8 +34,8 @@ export const resolveRelationsDeep = async (
   return data
 }
 
-const searchStorys = (componentName: string, data?: StoryComponent): StoryComponent[] => {
-  const components: StoryComponent[] = []
+const searchStorys = (componentName: string, data?: StoryContentType): StoryDataType[] => {
+  const components: StoryContentType[] = []
   if (!data) {
     return []
   }
@@ -45,7 +44,7 @@ const searchStorys = (componentName: string, data?: StoryComponent): StoryCompon
   }
   Object.values(data).forEach(value => {
     if (typeof value === 'object') {
-      components.push(...searchStorys(componentName, value as StoryComponent))
+      components.push(...searchStorys(componentName, value as StoryDataType))
     }
   })
   return components
